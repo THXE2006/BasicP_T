@@ -27,11 +27,13 @@ player_name = input("Enter Your Name : ")
 print("Welcome : " + player_name)
 print("เจอมอนสะเต้อ เอาไงต่อดี")
 
-while turn <= level :
+while turn <= level + 1 :
     print("เทิร์นที่ :" + str(turn))
-    x = input("พิมพ์ [1 เพื่อต่อสู้] : [2 เพื่อหลบหนี]\n")
     
     if turn <= level :
+        
+        x = input("พิมพ์ [1 เพื่อต่อสู้] : [2 เพื่อหลบหนี]\n")
+
         if x == "1" or x == "2" :
             
             if x == "2" :
@@ -51,21 +53,30 @@ while turn <= level :
                         turn += 1
                         boss -= sword
                         print("มอนเตอร์เลือดลดไป " + str(sword) + " แต้ม" + "\n" + "เลือดมอนเตอร์เหลือ : " + str(boss) + " แต้ม")
+                        if boss == 0 :
+                            print("YOU WIN!!!")
+                            break
                     elif weapon == "2" :
                         turn += 1
                         boss -= bow
                         print("มอนเตอร์เลือดลดไป " + str(bow) + " แต้ม" + "\n" + "เลือดมอนเตอร์เหลือ : " + str(boss) + " แต้ม")    
+                        if boss == 0 :
+                            print("YOU WIN!!!")
+                            break
                     elif weapon == "3" :
                         turn += 1
                         boss -= skill
                         print("มอนเตอร์เลือดลดไป " + str(skill) + " แต้ม" + "\n" + "เลือดมอนเตอร์เหลือ : " + str(boss) + " แต้ม")
+                        if boss == 0 :
+                            print("YOU WIN!!!")
+                            break
                     else :
                         print("ErRoR เลือกอาวุธใหม่")
-            else :
-                break
         else :
             print("เลือกใหม่อีกทีนะคิริตู่")
     else :
-        print("จบเกม คิริตู่โดนมอนตีตาย")
+        if boss > 0 :
+            print("YOU LOSE!! จบเกม คิริตู่โดนมอนตีตาย")
+        break
     
     #ยังแสดงข้อความจบเกมไม่ได้
