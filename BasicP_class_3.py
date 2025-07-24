@@ -62,13 +62,17 @@
 # while i < 1 :
 #     print("Hello World")
 
-while True :
-    x = input("Type 1 or 2 :\n")
+# while True :
+#     x = input("Type 1 or 2 :\n")
 
-    if x == "1" or x == "2" :
-        if x == "2" :
-            break
-        else :
-            print("ReType")
-    else :
-        print("Plss Only 1 or 2. Try again")
+#     if x == "1" or x == "2" :
+#         if x == "2" :
+#             break
+#         else :
+#             print("ReType")
+#     else :
+#         print("Plss Only 1 or 2. Try again")
+x = 0
+for i in range(100) :
+    x += 1
+    print(str(x))
